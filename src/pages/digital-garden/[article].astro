@@ -3,10 +3,13 @@ import { getCollection, render } from "astro:content";
 // 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
   const posts = await getCollection("articles");
-  return posts.map((post) => ({
-    params: { id: post.id },
-    props: { post },
-  }));
+  return posts.map((post) => {
+    console.log(post.id);
+    return {
+      params: { article: post.id },
+      props: { post },
+    };
+  });
 }
 
 // 2. For your template, you can get the entry directly from the prop
