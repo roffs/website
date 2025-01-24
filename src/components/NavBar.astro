@@ -1,0 +1,53 @@
+---
+
+---
+
+<div class="top-bar">
+    <div id="logo">Gerard Fabregó</div>
+    <nav>
+        <ul>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Projects</a></li>
+            <li><a href="/press">Digital garden</a></li>
+            <li><a href="/press">Contact</a></li>
+        </ul>
+    </nav>
+    <div id="empty"></div>
+</div>
+
+<style>
+    .top-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* Ensures proper spacing for the logo and navBar */
+        padding: 0 20px;
+        height: 7vh;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+
+    #logo {
+        flex: 1;
+    }
+
+    nav {
+        flex: 4;
+    }
+
+    #empty {
+        flex: 1;
+        height: 100%;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        list-style-type: none;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        padding: 0 10px;
+    }
+</style>
