@@ -1,7 +1,17 @@
 ---
+import { getCollection, render } from "astro:content";
+
 import Layout from "../../layouts/Layout.astro";
+
+const posts = await getCollection("articles");
 ---
 
 <Layout>
-    <div>Digital Garden</div>
+    {
+        posts.map((post) => (
+            <li>
+                <a href={`/digital-garden/${post.id}`}>{post.data.title}</a>
+            </li>
+        ))
+    }
 </Layout>
