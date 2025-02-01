@@ -1,6 +1,7 @@
 ---
 title: Some title
 description: bla bla bla
+tags: ["first-tag", "second-tag"]
 pubDate: 12/01/2020
 ---
 

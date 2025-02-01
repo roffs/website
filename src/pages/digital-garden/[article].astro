@@ -1,6 +1,6 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import ArticleLayout from "../../layouts/Article.astro";
+import GlobalLayout from "../../layouts/Global.astro";
+import ColumnLayout from "../../layouts/Column.astro";
 import { getCollection, render } from "astro:content";
 
 // 1. Generate a new path for every collection entry
@@ -20,10 +20,10 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<Layout>
-  <ArticleLayout>
+<GlobalLayout>
+  <ColumnLayout>
     <h1>{post.data.title}</h1>
     <Content />
     Hola
-  </ArticleLayout>
-</Layout>
+  </ColumnLayout>
+</GlobalLayout>

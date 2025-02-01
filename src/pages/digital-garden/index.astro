@@ -1,17 +1,24 @@
 ---
-import { getCollection, render } from "astro:content";
+import { getCollection } from "astro:content";
 
-import Layout from "../../layouts/Layout.astro";
+import GlobalLayout from "../../layouts/Global.astro";
+import ColumnLayout from "../../layouts/Column.astro";
+import Card from "../../components/Card.astro";
 
 const posts = await getCollection("articles");
 ---
 
-<Layout>
-    {
-        posts.map((post) => (
-            <li>
-                <a href={`/digital-garden/${post.id}`}>{post.data.title}</a>
-            </li>
-        ))
-    }
-</Layout>
+<GlobalLayout>
+    <ColumnLayout>
+        {
+            posts.map((post) => (
+                <Card
+                    link={`/digital-garden/${post.id}`}
+                    title={post.data.title}
+                    description={post.data.description}
+                    tags={post.data.tags}
+                />
+            ))
+        }
+    </ColumnLayout>
+</GlobalLayout>
