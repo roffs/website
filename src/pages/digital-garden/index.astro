@@ -1,9 +1,18 @@
 ---
 import { getCollection } from "astro:content";
 
+import {
+    Card,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+} from "@/components/ui/card";
+
+import { Badge } from "@/components/ui/badge";
+
 import GlobalLayout from "../../layouts/Global.astro";
 import ColumnLayout from "../../layouts/Column.astro";
-import Card from "../../components/Card.astro";
 
 const posts = await getCollection("articles");
 ---
@@ -11,14 +20,26 @@ const posts = await getCollection("articles");
 <GlobalLayout>
     <ColumnLayout>
         {
-            posts.map((post) => (
-                <Card
-                    link={`/digital-garden/${post.id}`}
-                    title={post.data.title}
-                    description={post.data.description}
-                    tags={post.data.tags}
-                />
-            ))
+            posts.map((post) => {
+                const { title, description, tags } = post.data;
+                return (
+                    <Card>
+                        <CardHeader>
+                            <CardTitle>
+                                <a href={`/digital-garden/${post.id}`}>
+                                    {title}
+                                </a>
+                            </CardTitle>
+                            <CardDescription>{description}</CardDescription>
+                        </CardHeader>
+                        <CardFooter>
+                            {tags.map((tag: any) => (
+                                <Badge variant="outline">{tag}</Badge>
+                            ))}
+                        </CardFooter>
+                    </Card>
+                );
+            })
         }
     </ColumnLayout>
 </GlobalLayout>
