@@ -3,13 +3,16 @@
 ---
 
 <div class="top-bar">
-    <div id="logo">Gerard Fabregó</div>
+    <div id="logo">
+        <a href="/website">Gerard Fabregó</a>
+    </div>
+
     <nav>
         <ul>
-            <li><a href="/about">About</a></li>
-            <li><a href="/contact">Projects</a></li>
-            <li><a href="/press">Digital garden</a></li>
-            <li><a href="/press">Contact</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="/projects">Projects</a></li>
+            <li><a href="/digital-garden">Digital garden</a></li>
+            <li><a href="/contact">Contact</a></li>
         </ul>
     </nav>
     <div id="empty"></div>
@@ -25,17 +28,13 @@
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     }
 
-    #logo {
+    #logo,
+    #empty {
         flex: 1;
     }
 
     nav {
         flex: 4;
-    }
-
-    #empty {
-        flex: 1;
-        height: 100%;
     }
 
     ul {
