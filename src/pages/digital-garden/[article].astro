@@ -2,6 +2,7 @@
 import GlobalLayout from "../../layouts/Global.astro";
 import ColumnLayout from "../../layouts/Column.astro";
 import { getCollection, render } from "astro:content";
+import Prose from "@/components/Prose.astro";
 
 // 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
@@ -22,8 +23,8 @@ const { Content } = await render(post);
 
 <GlobalLayout>
   <ColumnLayout>
-    <div class="article">
+    <Prose>
       <Content />
-    </div>
+    </Prose>
   </ColumnLayout>
 </GlobalLayout>
