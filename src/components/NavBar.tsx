@@ -11,25 +11,19 @@ const NavBar = () => (
     <NavigationMenu>
         <NavigationMenuList>
             <NavigationMenuItem>
-                <a href="/#about">
-                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        About
-                    </NavigationMenuLink>
-                </a>
+                <NavigationMenuLink href="/#about" className={navigationMenuTriggerStyle()}>
+                    About
+                </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-                <a href="/digital-garden">
-                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        Digital garden
-                    </NavigationMenuLink>
-                </a>
+                <NavigationMenuLink href="/digital-garden" className={navigationMenuTriggerStyle()}>
+                    Digital garden
+                </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-                <a href="/contact">
-                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        Contact
-                    </NavigationMenuLink>
-                </a>
+                <NavigationMenuLink href="/contact" className={navigationMenuTriggerStyle()}>
+                    Contact
+                </NavigationMenuLink>
             </NavigationMenuItem>
         </NavigationMenuList>
     </NavigationMenu >
