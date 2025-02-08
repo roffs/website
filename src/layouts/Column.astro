@@ -6,10 +6,123 @@
     <slot />
 </div>
 
-<style>
+<style is:global>
     .article {
         margin: auto;
-        max-width: 750px;
+        max-width: 1000px;
         padding: 50px 75px;
+
+        h1 {
+            scroll-margin: 20px;
+            font-size: 2.25rem;
+            font-weight: 800;
+            letter-spacing: -0.025em;
+        }
+
+        @media (min-width: 1024px) {
+            h1 {
+                font-size: 3rem;
+            }
+        }
+
+        h2 {
+            margin-top: 2.5rem;
+            scroll-margin: 20px;
+            border-bottom: 1px solid currentColor;
+            padding-bottom: 0.5rem;
+            font-size: 1.875rem;
+            line-height: 2.25rem;
+            font-weight: 600;
+            letter-spacing: -0.025em;
+        }
+
+        h2:first-child {
+            margin-top: 0;
+        }
+
+        h3 {
+            margin-top: 2rem;
+            scroll-margin: 20px;
+            font-size: 1.5rem;
+            line-height: 2rem;
+            font-weight: 600;
+            letter-spacing: -0.025em;
+        }
+
+        h4 {
+            scroll-margin: 20px;
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+            font-weight: 600;
+            letter-spacing: -0.025em;
+        }
+
+        p {
+            line-height: 1.75rem;
+        }
+
+        p:not(:first-child) {
+            margin-top: 1.5rem;
+        }
+
+        blockquote {
+            margin-top: 1.5rem;
+            border-left: 2px solid currentColor;
+            padding-left: 1.5rem;
+            font-style: italic;
+        }
+
+        ul,
+        ol {
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+            margin-left: 1.5rem;
+        }
+
+        ul,
+        ol > li {
+            margin-top: 0.5rem;
+        }
+
+        ul {
+            list-style-type: disc;
+        }
+
+        ol {
+            list-style-type: decimal;
+        }
+
+        ol li::marker {
+            font-weight: bold;
+        }
+
+        code {
+            position: relative;
+            border-radius: 0.375rem;
+            background-color: var(--color-muted);
+            padding-left: 0.3rem;
+            padding-right: 0.3rem;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+            font-family: "Courier New", monospace;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        pre {
+            padding: 1rem;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            font-family: inherit;
+            white-space: pre-wrap;
+            overflow-x: auto;
+        }
+
+        pre code {
+            background-color: inherit;
+            font-family: inherit;
+            display: block;
+            padding: 0;
+        }
     }
 </style>
