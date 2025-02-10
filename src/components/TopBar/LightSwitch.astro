@@ -1,0 +1,22 @@
+---
+import { Moon, Sun } from "lucide-react";
+
+import { Button } from "@/components/ui/button";
+---
+
+<Button variant="ghost" size="icon" id="theme-selector">
+    <Sun className="h-[1.5rem] w-[1.3rem] dark:hidden" />
+    <Moon className="hidden h-5 w-5 dark:block" />
+</Button>
+
+<script>
+    document.getElementById("theme-selector")?.addEventListener("click", () => {
+        if (localStorage.theme === "dark") {
+            localStorage.theme = "light";
+            document.documentElement.classList.remove("dark");
+        } else {
+            localStorage.theme = "dark";
+            document.documentElement.classList.add("dark");
+        }
+    });
+</script>

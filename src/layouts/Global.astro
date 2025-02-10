@@ -7,13 +7,28 @@ import TopBar from "../components/TopBar";
 <!doctype html>
 <html lang="en">
 	<head>
+		<script is:inline>
+			if (
+				localStorage.theme === "dark" ||
+				(!("theme" in localStorage) &&
+					window.matchMedia("(prefers-color-scheme: dark)").matches)
+			) {
+				document.documentElement.classList.add("dark");
+			} else {
+				document.documentElement.classList.remove("dark");
+			}
+		</script>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>My website</title>
 	</head>
 	<body>
+		<script>
+			const theme = localStorage.getItem("theme") || "light";
+			document.documentElement.dataset.theme = theme;
+		</script>
 		<TopBar />
 		<slot />
 	</body>
@@ -25,5 +40,14 @@ import TopBar from "../components/TopBar";
 		margin: 0;
 		width: 100%;
 		height: 100%;
+		background-color: var(--color-background);
+		transition-property: background-color, border-color,
+			text-decoration-color, fill, stroke, --tw-gradient-from,
+			--tw-gradient-via, --tw-gradient-to;
+		transition-timing-function: var(
+			--default-transition-timing-function
+		); /* cubic-bezier(0.4, 0, 0.2, 1) */
+		transition-duration: var(--default-transition-duration); /* 150ms */
+		color: var(--color-primary);
 	}
 </style>

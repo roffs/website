@@ -1,4 +1,5 @@
 ---
+import LightSwitch from "./LightSwitch.astro";
 import NavBar from "./NavBar";
 ---
 
@@ -7,26 +8,17 @@ import NavBar from "./NavBar";
         <a href="/">Gerard Fabregó</a>
     </div>
     <NavBar client:load />
-    <div id="empty"></div>
+    <LightSwitch />
 </div>
 
 <style>
     .top-bar {
         display: flex;
         align-items: center;
-        justify-content: space-between; /* Ensures proper spacing for the logo and navBar */
+        justify-content: space-between;
         padding: 0 20px;
         height: 7vh;
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    }
-
-    #logo,
-    #empty {
-        flex: 1;
-    }
-
-    nav {
-        flex: 4;
     }
 
     ul {
