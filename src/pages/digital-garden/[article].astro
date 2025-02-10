@@ -4,7 +4,7 @@ import ColumnLayout from "@/layouts/Column.astro";
 import Prose from "@/components/Prose.astro";
 
 import { getCollection, render } from "astro:content";
-import TableOfContent from "@/components/TableOfContent.astro";
+import TableOfContent from "@/components/TableOfContent";
 
 export async function getStaticPaths() {
   const posts = await getCollection("articles");
