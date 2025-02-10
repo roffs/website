@@ -4,25 +4,26 @@ import ColumnLayout from "@/layouts/Column.astro";
 import Prose from "@/components/Prose.astro";
 
 import { getCollection, render } from "astro:content";
+import TableOfContent from "@/components/TableOfContent.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("articles");
   return posts.map((post) => {
-    console.log(post.id);
     return {
       params: { article: post.id },
-      props: { post },
+      props: { post, headings: post.rendered?.metadata?.headings },
     };
   });
 }
 
-const { post } = Astro.props;
+const { post, headings } = Astro.props;
 const { Content } = await render(post);
 ---
 
 <GlobalLayout>
   <ColumnLayout>
     <Prose>
+      <TableOfContent headings={headings} />
       <article>
         <Content />
       </article>
