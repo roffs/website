@@ -31,7 +31,7 @@ function buildToc(headings: RawHeading[]) {
 const toc = buildToc(headings);
 ---
 
-<nav class="toc">
+<nav>
     <ul>
         {toc.map((heading) => <TableOfContentHeading heading={heading} />)}
     </ul>
