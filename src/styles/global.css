@@ -1,5 +1,7 @@
 @import 'tailwindcss';
 
+@plugin '@tailwindcss/typography';
+
 @layer base {
     :root {
         --background: 0 0% 100%;
@@ -127,6 +129,7 @@
         }
     }
 }
+
 
 
 .border {

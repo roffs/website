@@ -1,6 +1,8 @@
 ---
-import GlobalLayout from "../../layouts/Global.astro";
-import ColumnLayout from "../../layouts/Column.astro";
+import GlobalLayout from "@/layouts/Global.astro";
+import ColumnLayout from "@/layouts/Column.astro";
+import Prose from "@/components/Prose.astro";
+
 import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
@@ -20,6 +22,10 @@ const { Content } = await render(post);
 
 <GlobalLayout>
   <ColumnLayout>
-    <Content />
+    <Prose>
+      <article>
+        <Content />
+      </article>
+    </Prose>
   </ColumnLayout>
 </GlobalLayout>
