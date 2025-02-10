@@ -10,16 +10,18 @@ import {
 } from "@/components/ui/card";
 
 import { Badge } from "@/components/ui/badge";
-
-import GlobalLayout from "../../layouts/Global.astro";
-import ColumnLayout from "../../layouts/Column.astro";
+import Prose from "@/components/Prose.astro";
+import GlobalLayout from "@/layouts/Global.astro";
+import ColumnLayout from "@/layouts/Column.astro";
 
 const posts = await getCollection("articles");
 ---
 
 <GlobalLayout>
     <ColumnLayout>
-        <h1>Digital Garden</h1>
+        <Prose>
+            <h1>Digital Garden</h1>
+        </Prose>
         {
             posts.map((post) => {
                 const { title, description, tags } = post.data;
