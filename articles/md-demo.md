@@ -29,7 +29,7 @@ Use 3 dashes for an em-dash. Use 2 dashes for ranges (ex., "it's all
 in chapters 12--14"). Three dots ... will be converted to an ellipsis.
 Unicode is supported. ☺
 
-
+## H2 header too 
 
 An h2 header
 ------------
@@ -54,6 +54,12 @@ define foobar() {
     print "Welcome to flavor country!";
 }
 ~~~
+
+```cpp
+public int main() {
+  auto var = foo;
+}
+```
 
 (which makes copying & pasting easier). You can optionally mark the
 delimited block for Pandoc to syntax highlight it:
