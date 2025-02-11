@@ -15,6 +15,9 @@ import GlobalLayout from "@/layouts/Global.astro";
 import ColumnLayout from "@/layouts/Column.astro";
 
 const posts = await getCollection("articles");
+const tags = [...new Set(posts.flatMap((post) => post.data.tags))];
+
+tags.forEach((t) => console.log(t));
 ---
 
 <GlobalLayout>
@@ -22,6 +25,7 @@ const posts = await getCollection("articles");
         <Prose>
             <h1>Digital Garden</h1>
         </Prose>
+        {tags.map((t) => <div>{t}</div>)}
         {
             posts.map((post) => {
                 const { title, description, tags } = post.data;
