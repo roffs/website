@@ -8,11 +8,14 @@ import NavBar from "./NavBar";
         <a href="/">Gerard Fabregó</a>
     </div>
     <NavBar client:load />
-    <LightSwitch />
+    <div id="toggle">
+        <LightSwitch />
+    </div>
 </div>
 
 <style>
     .top-bar {
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -21,16 +24,13 @@ import NavBar from "./NavBar";
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     }
 
-    ul {
-        display: flex;
-        flex-direction: row;
-        list-style-type: none;
-        justify-content: center;
-        margin: 0;
-        padding: 0;
+    #logo,
+    #toggle {
+        flex: 2;
     }
 
-    li {
-        padding: 0 10px;
+    #toggle {
+        display: flex;
+        justify-content: flex-end; /* Aligns the child to the left */
     }
 </style>
