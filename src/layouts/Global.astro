@@ -30,7 +30,9 @@ import TopBar from "../components/TopBar";
 			document.documentElement.dataset.theme = theme;
 		</script>
 		<TopBar />
-		<slot />
+		<div id="content">
+			<slot />
+		</div>
 	</body>
 </html>
 
@@ -39,7 +41,6 @@ import TopBar from "../components/TopBar";
 	body {
 		margin: 0;
 		width: 100%;
-		height: 100%;
 		background-color: var(--color-background);
 		transition-property: background-color, border-color,
 			text-decoration-color, fill, stroke, --tw-gradient-from,
@@ -48,5 +49,9 @@ import TopBar from "../components/TopBar";
 		transition-duration: var(--default-transition-duration);
 		scroll-behavior: smooth;
 		color: var(--color-primary);
+	}
+
+	#content {
+		margin-top: 7vh;
 	}
 </style>
