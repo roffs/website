@@ -1,15 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 
-import {
-    Card,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
-} from "@/components/ui/card";
-
-import { Badge } from "@/components/ui/badge";
+import CardsDisplayer from "@/components/CardsDisplayer";
 import Prose from "@/components/Prose.astro";
 import GlobalLayout from "@/layouts/Global.astro";
 import ColumnLayout from "@/layouts/Column.astro";
@@ -17,36 +9,23 @@ import ColumnLayout from "@/layouts/Column.astro";
 const posts = await getCollection("articles");
 const tags = [...new Set(posts.flatMap((post) => post.data.tags))];
 
-tags.forEach((t) => console.log(t));
 ---
 
 <GlobalLayout>
     <ColumnLayout>
         <Prose>
             <h1>Digital Garden</h1>
+            <h4>Select tags to filter</h4>
         </Prose>
-        {tags.map((t) => <div>{t}</div>)}
-        {
-            posts.map((post) => {
-                const { title, description, tags } = post.data;
-                return (
-                    <Card>
-                        <CardHeader>
-                            <CardTitle>
-                                <a href={`/digital-garden/${post.id}`}>
-                                    {title}
-                                </a>
-                            </CardTitle>
-                            <CardDescription>{description}</CardDescription>
-                        </CardHeader>
-                        <CardFooter>
-                            {tags.map((tag: any) => (
-                                <Badge variant="outline">{tag}</Badge>
-                            ))}
-                        </CardFooter>
-                    </Card>
-                );
-            })
-        }
+        <CardsDisplayer client:load posts={posts.map((p => {return {id: p.id, ...p.data}}))} tags={tags}/>
     </ColumnLayout>
 </GlobalLayout>
+
+<style>
+    #tags{
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+</style>
