@@ -40,10 +40,9 @@ const CardsDisplayer = ({posts, tags}: CardsDisplayerProps) => {
         }
     }, [selectedTags]);
 
-    console.log("render")
     return (
         <div>
-            <div className={"my-4"}>
+            <div className={"my-4 flex gap-2"}>
                 {tags.map((tag) => <Toggle key={tag} onClick={() => toggleTag(tag)} variant="outline" >{tag}</Toggle>)}
             </div>
             {filteredPosts.map((post) => {
