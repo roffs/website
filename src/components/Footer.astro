@@ -1,0 +1,30 @@
+---
+import { Separator } from "@/components/ui/separator"
+import { Linkedin, Github } from 'lucide-react';
+
+---
+
+
+<footer>
+    <Separator/>
+    <div id="icons">
+        <Linkedin size={24} color="#0077B5" />
+        <Github size={24} color="currentColor" />
+    </div>
+</footer>
+
+<style>
+    footer {
+        margin: 0 75px;
+        height: 11vh;
+        text-align: center;
+    }
+
+    #icons {
+        padding-top: 10px;
+        padding-right: 10px;
+        display: flex;
+        justify-content: end;
+        gap: 10px;
+    }
+</style>

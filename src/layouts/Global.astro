@@ -2,6 +2,7 @@
 import "@/styles/global.css";
 
 import TopBar from "../components/TopBar";
+import Footer from "../components/Footer.astro";
 ---
 
 <!doctype html>
@@ -30,9 +31,10 @@ import TopBar from "../components/TopBar";
 			document.documentElement.dataset.theme = theme;
 		</script>
 		<TopBar />
-		<div id="content">
+		<main>
 			<slot />
-		</div>
+		</main>
+		<Footer/>
 	</body>
 </html>
 
@@ -42,16 +44,24 @@ import TopBar from "../components/TopBar";
 		margin: 0;
 		width: 100%;
 		background-color: var(--color-background);
-		transition-property: background-color, border-color,
-			text-decoration-color, fill, stroke, --tw-gradient-from,
-			--tw-gradient-via, --tw-gradient-to;
-		transition-timing-function: var(--default-transition-timing-function);
-		transition-duration: var(--default-transition-duration);
 		scroll-behavior: smooth;
 		color: var(--color-primary);
 	}
 
-	#content {
+	main {
+		min-height: 82vh;
 		margin-top: 7vh;
+	}
+
+
+</style>
+
+<style is:global>
+	* {
+		transition-property: background-color, border-color,
+		text-decoration-color, fill, stroke, --tw-gradient-from,
+		--tw-gradient-via, --tw-gradient-to;
+		transition-timing-function: var(--default-transition-timing-function);
+		transition-duration: var(--default-transition-duration);
 	}
 </style>
