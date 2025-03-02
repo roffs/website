@@ -49,8 +49,8 @@ import Footer from "../components/Footer.astro";
 	}
 
 	main {
-		min-height: 82vh;
-		margin-top: 7vh;
+		min-height: calc(100vh - var(--header-height) - var(--footer-height));
+		margin-top: var(--header-height);
 	}
 
 

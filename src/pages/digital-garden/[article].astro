@@ -3,30 +3,30 @@ import GlobalLayout from "@/layouts/Global.astro";
 import ColumnLayout from "@/layouts/Column.astro";
 import Prose from "@/components/Prose.astro";
 
-import { getCollection, render } from "astro:content";
+import {getCollection, render} from "astro:content";
 import TableOfContent from "@/components/TableOfContent";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("articles");
-  return posts.map((post) => {
-    return {
-      params: { article: post.id },
-      props: { post, headings: post.rendered?.metadata?.headings },
-    };
-  });
+    const posts = await getCollection("articles");
+    return posts.map((post) => {
+        return {
+            params: {article: post.id},
+            props: {post, headings: post.rendered?.metadata?.headings},
+        };
+    });
 }
 
-const { post, headings } = Astro.props;
-const { Content } = await render(post);
+const {post, headings} = Astro.props;
+const {Content} = await render(post);
 ---
 
 <GlobalLayout>
-  <ColumnLayout>
     <Prose>
-      <TableOfContent headings={headings} />
-      <article>
-        <Content />
-      </article>
+        <ColumnLayout>
+            <TableOfContent headings={headings}/>
+            <article>
+                <Content/>
+            </article>
+        </ColumnLayout>
     </Prose>
-  </ColumnLayout>
 </GlobalLayout>

@@ -5,10 +5,11 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @layer base {
-
-
     :root {
-        --column-width: 80ch;
+        --footer-height: 7.5ch;
+        --header-height: 5ch;
+
+        --column-width: 75ch;
         --background: 0 0% 100%;
         --foreground: 240 10% 3.9%;
 

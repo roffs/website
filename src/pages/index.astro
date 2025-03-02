@@ -1,11 +1,17 @@
 ---
 import HeroBanner from "@/layouts/HeroBanner.astro";
 import GlobalLayout from "../layouts/Global.astro";
+import Prose from "../components/Prose.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <GlobalLayout>
-	<HeroBanner> Hello </HeroBanner>
+    <HeroBanner>
+        <Prose>
+            <h1>Hi there, <br> I'm Gerard 👋🏻</h1>
+            <h3>
+                I'm a software engineer and a computer graphics enthusiast. I love to write about web development, computer graphics, and software engineering.
+            </h3>
+        </Prose>
+    </HeroBanner>
 </GlobalLayout>
