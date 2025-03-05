@@ -1,11 +1,9 @@
 ---
-title: Demo md
+title: An h1 header
 description: bla bla bla
 tags: ["first-tag", "second-tag"]
 pubDate: 12/01/2020
 ---
-An h1 header
-============
 
 Paragraphs are separated by a blank line.
 

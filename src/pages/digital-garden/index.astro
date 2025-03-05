@@ -1,5 +1,5 @@
 ---
-import { getCollection } from "astro:content";
+import {getCollection} from "astro:content";
 
 import CardsDisplayer from "@/components/CardsDisplayer";
 import Prose from "@/components/Prose.astro";
@@ -8,7 +8,6 @@ import ColumnLayout from "@/layouts/Column.astro";
 
 const posts = await getCollection("articles");
 const tags = [...new Set(posts.flatMap((post) => post.data.tags))];
-
 ---
 
 <GlobalLayout>
@@ -17,12 +16,14 @@ const tags = [...new Set(posts.flatMap((post) => post.data.tags))];
             <h1>Digital Garden</h1>
             <h4>Select tags to filter</h4>
         </Prose>
-        <CardsDisplayer client:load posts={posts.map((p => {return {id: p.id, ...p.data}}))} tags={tags}/>
+        <CardsDisplayer client:load posts={posts.map((p => {
+            return {id: p.id, ...p.data}
+        }))} tags={tags}/>
     </ColumnLayout>
 </GlobalLayout>
 
 <style>
-    #tags{
+    #tags {
         display: flex;
         gap: 10px;
         margin-top: 10px;

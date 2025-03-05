@@ -11,18 +11,19 @@ export async function getStaticPaths() {
     return posts.map((post) => {
         return {
             params: {article: post.id},
-            props: {post, headings: post.rendered?.metadata?.headings},
+            props: {post, headings: post.rendered?.metadata?.headings, title: post.data.title},
         };
     });
 }
 
-const {post, headings} = Astro.props;
+const {post, headings, title} = Astro.props;
 const {Content} = await render(post);
 ---
 
 <GlobalLayout>
     <Prose>
         <ColumnLayout>
+            <h1>{title}</h1>
             <TableOfContent headings={headings}/>
             <article>
                 <Content/>

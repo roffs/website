@@ -1,11 +1,9 @@
 ---
-title: Some title
+title: This is a title
 description: bla bla bla
 tags: ["first-tag", "different-tag"]
 pubDate: 12/01/2020
 ---
-
-# This is a title
 
 Some content
 
