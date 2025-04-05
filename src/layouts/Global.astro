@@ -24,6 +24,12 @@ import Footer from "../components/Footer.astro";
 		<link rel="icon" type="image/svg+xml" href="/brandIcon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>My website</title>
+
+		<!-- Add math formulas styling for markdown -->
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css"
+		/>
 	</head>
 	<body>
 		<script>
@@ -34,7 +40,7 @@ import Footer from "../components/Footer.astro";
 		<main>
 			<slot />
 		</main>
-		<Footer/>
+		<Footer />
 	</body>
 </html>
 
@@ -52,20 +58,21 @@ import Footer from "../components/Footer.astro";
 		min-height: calc(100vh - var(--header-height) - var(--footer-height));
 		margin-top: var(--header-height);
 	}
-
-
 </style>
 
 <style is:global>
 	* {
 		transition-property: background-color, border-color,
-		text-decoration-color, fill, stroke, --tw-gradient-from,
-		--tw-gradient-via, --tw-gradient-to;
+			text-decoration-color, fill, stroke, --tw-gradient-from,
+			--tw-gradient-via, --tw-gradient-to;
 		transition-timing-function: var(--default-transition-timing-function);
 		transition-duration: var(--default-transition-duration);
 	}
 
-	h1, h2, h3, h4 {
+	h1,
+	h2,
+	h3,
+	h4 {
 		scroll-margin-top: 8vh;
 	}
 </style>
