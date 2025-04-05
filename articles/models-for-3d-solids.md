@@ -12,7 +12,6 @@ Types of geometric models:
 - Volume models
 
 
-
 ## Features of geometric models:
 - **Non-ambiguity** A model is non-ambiguous if given a model there is at most one (possible) real object with that model
 - **Validity:** There should be at least one possible real object with that model

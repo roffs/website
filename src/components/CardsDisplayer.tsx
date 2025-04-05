@@ -35,27 +35,31 @@ const CardsDisplayer = ({ posts, tags }: CardsDisplayerProps) => {
 
     return (
         <div>
-            <div className={"my-4 flex gap-2"}>
+            <div className={"mt-4 mb-12 flex gap-2"}>
                 {tags.map((tag) => <Toggle key={tag} onClick={() => toggleTag(tag)} variant="outline" >{tag}</Toggle>)}
             </div>
-            {displayedPosts.map((post) => {
-                const { title, description, tags, id } = post;
-                return (
-                    <Card key={id}>
-                        <CardHeader>
-                            <CardTitle>
-                                <a href={`/digital-garden/${post.id}`}>{title}</a>
-                            </CardTitle>
-                            <CardDescription>{description}</CardDescription>
-                        </CardHeader>
-                        <CardFooter>
-                            {tags.map((tag) => (
-                                <Badge key={tag} variant="outline">{tag}</Badge>
-                            ))}
-                        </CardFooter>
-                    </Card>
-                )
-            })}
+            <div className="flex flex-wrap gap-4 justify-center">
+
+
+                {displayedPosts.map((post) => {
+                    const { title, description, tags, id } = post;
+                    return (
+                        <Card className="w-[350px]" key={id}>
+                            <CardHeader>
+                                <CardTitle>
+                                    <a href={`/digital-garden/${post.id}`}>{title}</a>
+                                </CardTitle>
+                                <CardDescription>{description}</CardDescription>
+                            </CardHeader>
+                            <CardFooter>
+                                {tags.map((tag) => (
+                                    <Badge key={tag} variant="outline">{tag}</Badge>
+                                ))}
+                            </CardFooter>
+                        </Card>
+                    )
+                })}
+            </div>
         </div>
     )
 }
