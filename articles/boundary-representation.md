@@ -69,4 +69,4 @@ It refers to the adjacency relationship between faces, edges and vertices.
 ## Typical conventions in BRep 
 - **Normal of a face:** The normal face will always be oriented towards the outside of the solid
 - For **exterior loops** vertices should be stored in **counter clock-wise (CCW) order**
-- For **interior loops** vertices should be stored in ** clock-wise (CCW) order**
+- For **interior loops** vertices should be stored in **clock-wise (CCW) order**

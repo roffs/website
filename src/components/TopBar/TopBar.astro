@@ -4,10 +4,8 @@ import NavBar from "./NavBar";
 ---
 
 <div class="top-bar">
-    <div id="logo">
-        <img src="/brandIcon.svg" alt="brand logo" class="h-[3vh]" />
-        <a href="/">Gerard Fabregó</a>
-    </div>
+    <a id="logo" href="/">Gerard Fabregó</a>
+
     <NavBar client:load />
     <div id="toggle">
         <LightSwitch />
@@ -15,11 +13,6 @@ import NavBar from "./NavBar";
 </div>
 
 <style>
-    #logo {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
     .top-bar {
         position: fixed;
         width: 100%;

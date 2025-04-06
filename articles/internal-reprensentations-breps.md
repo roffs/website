@@ -22,7 +22,7 @@ Face array: $[[v_0, v_1, v_2, v_3], ... ]$
 
 Vertex array: $[[x_0, y_0, z_0 ], [x_1, y_1, z_1],...]$
 
-In this representation we are not storing edge information per se, but it is implicit in the face array. For instance, in the example provided there would be an edge between $v_0$ and $v_1$. So all the relationships F:{V}, F:{E} and E:{V} can be obtained from the face array. 
+In this representation we are not storing edge information per se, but it is implicit in the face array. For instance, in the example provided there would be an edge between $v_0$ and $v_1$. So all the relationships $F:\{V\}$, $F:\{E\}$ and $E:\{V\}$ can be obtained from the face array. 
 
 The problem with this representation is that **it does not support holes**. 
 
