@@ -80,17 +80,17 @@ $$
 From a theoretical point of view, the volum of an object can be computed as:
 
 $$
-V = \iiint_v{dV}
+V = \iiint\limits_V{dV}
 $$
 
 With the divergence theorem can also be expressed as: 
 $$
-V = \iint_S{x\:n_x\:dS} = \iint_S{y\:n_y\:dS} = \iint_S{z\:n_z\:dS}
+V = \iint\limits_S{x\:n_x\:dS} = \iint\limits_S{y\:n_y\:dS} = \iint\limits_S{z\:n_z\:dS}
 $$
 
 Which, since they are the same, can be put as: 
 $$
-V = \frac{1}{3}\iint_S{x\:n_x\:+y\:n_y\:+z\:n_z\:dS}
+V = \frac{1}{3}\iint\limits_S{x\:n_x\:+y\:n_y\:+z\:n_z\:dS}
 $$
 
 ## Mass of a solid
@@ -106,18 +106,18 @@ $$
 By definition, the center of mass $G$ can be computed as: 
 
 $$
-G = (G_x, G_y, G_z) = \frac{1}{Volume}\left(\iiint_v{x\:dV}, \iiint_v{y\:dV}, \iiint_v{z\:dV}\right)
+G = (G_x, G_y, G_z) = \frac{1}{Volume}\left(\iiint\limits_v{x\:dV}, \iiint\limits_v{y\:dV}, \iiint\limits_v{z\:dV}\right)
 $$
 
 Due to the divergence theorem, we can express: 
-- $G_x = \frac{1}{2\: Vol}\iint_S{x^2\;n_x\;dS}$
-- $G_y = \frac{1}{2\: Vol}\iint_S{y^2\;n_y\;dS}$
-- $G_z = \frac{1}{2\: Vol}\iint_S{z^2\;n_z\;dS}$
+- $G_x = \frac{1}{2\: Vol}\iint\limits_S{x^2\;n_x\;dS}$
+- $G_y = \frac{1}{2\: Vol}\iint\limits_S{y^2\;n_y\;dS}$
+- $G_z = \frac{1}{2\: Vol}\iint\limits_S{z^2\;n_z\;dS}$
 
 Finally: 
 
 $$
-G = \frac{1}{2\: Vol}\left(\iint_S{x^2\;n_x\;dS, \iint_S{y^2\;n_y\;dS}, \iint_S{z^2\;n_z\;dS}}\right)
+G = \frac{1}{2\: Vol}\left(\iint\limits_S{x^2\,n_x\;dS, \iint\limits_S{y^2\,n_y\;dS}, \iint\limits_S{z^2\,n_z\;dS}}\right)
 $$
 
 ## Moment of inertia tensor
@@ -136,13 +136,13 @@ I_{zx} & I_{zy} & I_{zz}
 *We will assume that we've translated the object so its center of mass $G$ is at the origin.*
 
 By definition: 
-- $I_{xx} = \rho \iiint_V{y^2 + z^2\;dV}$
-- $I_{yy} = \rho \iiint_V{x^2 + z^2\;dV}$
-- $I_{zz} = \rho \iiint_V{x^2 + y^2\;dV}$
+- $I_{xx} = \rho \iiint\limits_V{y^2 + z^2\,dV}$
+- $I_{yy} = \rho \iiint\limits_V{x^2 + z^2\,dV}$
+- $I_{zz} = \rho \iiint\limits_V{x^2 + y^2\,dV}$
 
 where $\rho$ is the density. 
 
 Again, given the convergence theorem: 
-- $I_{xx} = \rho\frac{1}{3}\iint_S{y^3\;n_y + z^3\;n_z\;dS}$
-- $I_{yy} = \rho\frac{1}{3}\iint_S{s^3\;n_x + z^3\; n_z\;dS}$
-- $I_{zz} = \rho\frac{1}{3}\iint_S{x^3\;n_x + y^3\;n_y\;dS}$
+- $I_{xx} = \rho\frac{1}{3}\iint\limits_S{y^3\,n_y + z^3\,n_z\,dS}$
+- $I_{yy} = \rho\frac{1}{3}\iint\limits_S{s^3\,n_x + z^3\,n_z\,dS}$
+- $I_{zz} = \rho\frac{1}{3}\iint\limits_S{x^3\,n_x + y^3\,n_y\,dS}$
